@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator BMI</title>
-
-    <link rel="stylesheet" href="css/styles.css">
-    
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
     <div class="container">
         <div class="bmi-calculator">
             <h2>Kalkulator BMI</h2>
             <p>Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di kalkulator BMI.</p>
             <form id="bmi-form">
-                <div>
-                    <label>Jenis Kelamin</label><br>
-                    <input type="radio" name="gender" value="Pria" checked> Pria
-                    <input type="radio" name="gender" value="Wanita"> Wanita
+                <div class="input-group">
+                    <label>Jenis Kelamin</label>
+                    <div class="radio-group">
+                        <input type="radio" name="gender" value="Pria" id="pria" checked>
+                        <label for="pria">Pria</label>
+                        <input type="radio" name="gender" value="Wanita" id="wanita">
+                        <label for="wanita">Wanita</label>
+                    </div>
                 </div>
-                <div>
+                <div class="input-group">
                     <label for="weight">Berat Badan (Kg)</label>
                     <input type="number" id="weight" required>
                 </div>
-                <div>
+                <div class="input-group">
                     <label for="age">Usia (tahun)</label>
                     <input type="number" id="age" required>
                 </div>
-                <div>
+                <div class="input-group">
                     <label for="height">Tinggi Badan (cm)</label>
                     <input type="number" id="height" required>
                 </div>
-                <button type="button" onclick="calculateBMI()">Hitung BMI</button>
-                <button type="reset">Reset</button>
+                <div class="button-group">
+                    <button type="button" class="btn primary" onclick="calculateBMI()">Hitung BMI</button>
+                    <button type="reset" class="btn secondary">Reset</button>
+                </div>
             </form>
             <div class="features">
                 <h3>Keunggulan fitur</h3>
@@ -48,36 +50,26 @@
         <div class="result">
             <h2>Hasil</h2>
             <div id="result">
-                <h3>Berat Badan Lebih</h3>
-                <p id="bmi-value">24.7</p>
-                <p>Anda memiliki berat badan berlebih</p>
-                <button id="download-btn">Download Hasil BMI</button>
-                <p>Hasil BMI diantara 23 dan 25</p>
-                <p>Anda berada dalam kategori overweight atau berat badan berlebih. Cara terbaik untuk menurunkan berat badan adalah dengan mengatur kalor makanan yang dikonsumsi dan berolahraga. Jika BMI Anda berada dalam kategori ini, maka Anda dianjurkan untuk menurunkan berat badan hingga batas normal.</p>
-                <button>Konsultasi Ahli Gizi Via Aplikasi</button>
-                <button>Registrasi Online Ahli Gizi</button>
+                <h3></h3>
+                <p id="bmi-value"></p>
+                <p></p>
             </div>
-            <div class="risk-diseases">
-                <h3>Beberapa penyakit yang berasal dari kegemukan</h3>
-                <ul>
-                    <li>Diabetes</li>
-                    <li>Hipertensi</li>
-                    <li>Sakit Jantung</li>
-                    <li>Osteoarthritis</li>
-                </ul>
-                <button>Konsultasi Dokter Via Aplikasi</button>
-                <button>Registrasi Online Sekarang</button>
-            </div>
+            <h2>Tips and Trik Agar Tubuh Ideal</h2>
+        <ul>
+            <li>Makan makanan yang seimbang dan bergizi</li>
+            <li>Olahraga secara teratur</li>
+            <li>Kurangi konsumsi gula dan lemak</li>
+            <li>Tidur yang cukup dan berkualitas</li>
+            <li>Kontrol stres dan emosi</li>
+        </ul>
+        <div class="download-app">
+            
+            <img src="images/playstore.png" alt="Google Play Store">
+            <img src="images/appstore.png" alt="Apple App Store">
+        </div>
         </div>
     </div>
-    <div class="download-app">
-        <h3>Download Aplikasi</h3>
-        <img src="playstore.png" alt="Google Play Store">
-        <img src="appstore.png" alt="Apple App Store">
-    </div>
-
-    <script src="js/scripts.js"></script>
-
+    
+    <script src="js/script.js"></script>
 </body>
-
 </html>

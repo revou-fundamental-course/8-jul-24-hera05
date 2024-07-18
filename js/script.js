@@ -1,9 +1,9 @@
 function calculateBMI() {
     const weight = parseFloat(document.getElementById('weight').value);
-    const height = parseFloat(document.getElementById('height').value) / 100;
+    const height = parseFloat(document.getElementById('height').value) / 100; // Mengubah tinggi badan ke meter
 
     if (isNaN(weight) || isNaN(height)) {
-        alert("Please enter valid numbers");
+        alert("Mohon masukkan angka yang valid");
         return;
     }
 
@@ -15,13 +15,13 @@ function calculateBMI() {
         bmiCategory = 'Kekurangan Berat Badan';
         bmiMessage = 'Anda memiliki berat badan kurang';
     } else if (bmi >= 18.5 && bmi <= 24.9) {
-        bmiCategory = 'Normal';
+        bmiCategory = 'Normal (ideal)';
         bmiMessage = 'Anda memiliki berat badan normal';
     } else if (bmi >= 25 && bmi <= 29.9) {
-        bmiCategory = 'Berat Badan Lebih';
+        bmiCategory = 'Kelebihan Berat Badan';
         bmiMessage = 'Anda memiliki berat badan berlebih';
     } else {
-        bmiCategory = 'Obesitas';
+        bmiCategory = 'Kegemukan (Obesitas)';
         bmiMessage = 'Anda memiliki berat badan sangat berlebih';
     }
 
@@ -29,3 +29,15 @@ function calculateBMI() {
     document.getElementById('result').querySelector('h3').innerText = bmiCategory;
     document.getElementById('result').querySelector('p:nth-of-type(2)').innerText = bmiMessage;
 }
+function resetResult() {
+    document.getElementById('bmi-value').innerText = '';
+    document.getElementById('result').querySelector('h3').innerText = '';
+    document.getElementById('result').querySelector('p:nth-of-type(2)').innerText = '';
+  }
+  
+  // Get the reset button element
+  const resetButton = document.querySelector('button[type="reset"]');
+  
+  // Add an event listener to the reset button
+  resetButton.addEventListener('click', resetResult);
+  
